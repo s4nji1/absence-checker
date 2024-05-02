@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Attendance System</h1>
+  <button onclick="markPresent()">I am Present</button>
+  <button onclick="markAbsent()">I am Absent</button>
+  <script>
+    function markPresent() {
+    window.location.href = "attendance.php";
+  }
+
+function markAbsent() {
+    const studentName = prompt("Please enter your name:");
+    if (studentName) {
+        alert(`Thank you, ${studentName}. You have been marked as absent.`);
+    }
+  }
+  </script>
+</body>
+
+</html>
