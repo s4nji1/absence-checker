@@ -2,47 +2,93 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: rgb(17, 16, 16);
+   color : whitesmoke;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .container {
-    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 h1 {
-    color: #333;
     margin-bottom: 20px;
-    /* Added margin-bottom to create space */
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+   color : whitesmoke;
+    border-bottom: 1px solid #666161;
+    margin: 10px;
+    padding: 10px;
+    background-color: #807a7a;
+    border-radius: 5px;
 }
 
 button {
     padding: 10px 20px;
     margin: 10px;
     font-size: 16px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #4caf50;
-    /* Green */
-    color: white;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    display: absolute;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border: 1px solid #563C5C;
+    background-color: #856088;
+   color : whitesmoke;
 }
 
-button:hover {
-    background-color: #45a049;
+button :hover {
+    outline: none;
+    border-color: #333;
 }
 
 input[type="number"] {
     padding: 10px;
     margin: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    width: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border: 1px solid #666161;
     border-radius: 5px;
+    background-color: #807a7a;
+   color : whitesmoke;
+    outline: none;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    display: block;
 }
 
 input[type="number"]:focus {
     outline: none;
-    border-color: #4caf50;
-    /* Green */
+    border-color: #333;
 }
 
 .alert {
@@ -50,6 +96,14 @@ input[type="number"]:focus {
     margin: 10px;
     border-radius: 5px;
     background-color: #f44336;
-    /* Red */
     color: white;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
 }
