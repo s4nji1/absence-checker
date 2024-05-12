@@ -14,6 +14,7 @@
             <input type="number" id="correctNumber" name="correctNumber">
             <button type="submit">Submit</button>
         </form>
+        <a href="list.php"><button>show list</button></a>
     </div>
 
     <?php
