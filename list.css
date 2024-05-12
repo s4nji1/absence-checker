@@ -15,15 +15,6 @@ body {
     overflow: hidden;
 }
 
-.container {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 5px;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
-}
-
 h1, h2 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -31,12 +22,48 @@ h1, h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
-    color : whitesmoke;
+   color : whitesmoke;
     border-bottom: 1px solid #666161;
     margin: 10px;
     padding: 10px;
     background-color: #807a7a;
     border-radius: 5px;
+}
+
+.containerr {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+    border: 1px solid #666161;
+    background-color: #807a7a;
+    color : black;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+    font-size: 16px;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+    color : black
+}
+
+th {
+    background-color: #f2f2f2;
 }
 
 button {
@@ -64,30 +91,3 @@ button:hover {
     outline: none;
     border-color: #333;
 }
-
-input {
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
-    width: 350px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    letter-spacing: 1px;
-    font-weight: 400;
-    border: 1px solid #666161;
-    border-radius: 5px;
-    background-color: #807a7a;
-    color : whitesmoke;
-    outline: none;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
-    transition: 0.3s;
-    display: block;
-}
-
-
-input:focus {
-    outline: none;
-    border-color: #333;
-}
-

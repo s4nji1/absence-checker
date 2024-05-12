@@ -1,5 +1,5 @@
 <?php
-      $correctNumber = 78; // Default value
+      $correctNumber = 56; // Default value
       include "update_correct_number.php";
 ?>
 

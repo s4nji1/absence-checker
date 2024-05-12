@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +15,10 @@
       <h1>Presence marking</h1>
       <div id="numbers"></div>
       <form action="list.php"  method="post">
-      <label for="name">Enter your full name :</label>
-      <input type="text" id="name" />
-      <label for="id">Enter your ID :</label>
-      <input type="number" id="id" />
+      <label for="namep">Enter your full name :</label>
+      <input type="text" id="namep" name="namep" />
+      <label for="idp">Enter your ID :</label>
+      <input type="number" id="idp" name="idp" />
       <button type="submit">Mark Present</button>
       </form>
     </div>
