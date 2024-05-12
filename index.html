@@ -5,23 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Attendance System</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <h1>Attendance System</h1>
-  <button onclick="markPresent()">I am Present</button>
-  <button onclick="markAbsent()">I am Absent</button>
+  <div class="container">
+    <h1>Attendance System</h1>
+    <button onclick="markPresent()">I am Present</button>
+    <button onclick="markAbsent()">I am Absent</button>
+  </div>
   <script>
     function markPresent() {
     window.location.href = "attendance.php";
   }
 
 function markAbsent() {
-    const studentName = prompt("Please enter your name:");
-    if (studentName) {
-        alert(`Thank you, ${studentName}. You have been marked as absent.`);
-    }
+    window.location.href = "absent.php";
   }
   </script>
 </body>

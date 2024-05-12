@@ -9,15 +9,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Attendance Check</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="container">
       <h1>Attendance Check</h1>
       <div id="numbers"></div>
-      <label for="numberInput">Enter the Correct Number:</label>
+      <label for="numberInput">Enter the Correct Number :</label>
       <input type="number" id="numberInput" />
-      <button onclick="checkAttendance()">Check Attendance</button>
+      <button type="submit" onclick="checkAttendance()">Check Attendance</button>
       <p id="result"></p>
     </div>
 
@@ -45,7 +45,7 @@
 
         function displayNumbers(numbers) {
           const numbersContainer = document.getElementById("numbers");
-          numbersContainer.innerHTML = "Generated Numbers: ";
+          numbersContainer.innerHTML = "Pick a number : ";
           numbers.forEach((number) => {
             numbersContainer.innerHTML += number + " ";
           });
@@ -75,11 +75,10 @@
         }
 
         if (enteredNumber == correctNumber) {
-          document.getElementById("result").innerText =
-            "Congrats! You are present, you are not a liar.";
+          window.location.href = "present.php";
         } else {
           document.getElementById("result").innerText =
-            "Sorry, you are absent.";
+          window.location.href = "absent.php";
         }
       }
     </script>
