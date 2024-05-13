@@ -1,5 +1,5 @@
 <?php
-      $correctNumber = 56; // Default value
+      $correctNumber = 45; // Default value
       include "update_correct_number.php";
 ?>
 
@@ -69,11 +69,6 @@
         const enteredNumber = parseInt(
           document.getElementById("numberInput").value
         );
-        if (!enteredNumber || isNaN(enteredNumber)) {
-          alert("Please enter a valid number.");
-          return;
-        }
-
         if (enteredNumber == correctNumber) {
           window.location.href = "present.php";
         } else {

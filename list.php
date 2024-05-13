@@ -1,32 +1,13 @@
 <?php
-session_start();
+    include 'Database.php';
 
-    if (isset($_POST['namea']) && isset($_POST['ida'])) {
-        $name = $_POST['namea'];
-        $id = $_POST['ida'];
-        $student = array('name' => $name, 'id' => $id);
+    $absent_sql = "SELECT * FROM absent";
+    $absent_result = mysqli_query($conn, $absent_sql);
 
-        if (!isset($_SESSION['absent_students'])) {
-            $_SESSION['absent_students'] = array();
-        }
-        $_SESSION['absent_students'][] = $student;
-    } elseif (isset($_POST['namep']) && isset($_POST['idp'])) {
-        $name = $_POST['namep'];
-        $id = $_POST['idp'];
-        $student = array('name' => $name, 'id' => $id);
-
-        if (!isset($_SESSION['present_students'])) {
-            $_SESSION['present_students'] = array();
-        }
-        $_SESSION['present_students'][] = $student;
-    }
-
-if (isset($_POST['reset'])) {
-    unset($_SESSION['absent_students']);
-    unset($_SESSION['present_students']);
-}
-
+    $present_sql = "SELECT * FROM present";
+    $present_result = mysqli_query($conn, $present_sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,11 +30,12 @@ if (isset($_POST['reset'])) {
         </thead>
         <tbody id="absent-students-table">
             <?php
-            if (isset($_SESSION['absent_students'])) {
-                foreach ($_SESSION['absent_students'] as $student) {
-                    echo "<tr><td>" . $student['name'] . "</td><td>" . $student['id'] . "</td></tr>";
+                while($row = mysqli_fetch_assoc($absent_result)) {
+                    echo "<tr>";
+                    echo "<td>".$row['name']."</td>";
+                    echo "<td>".$row['id']."</td>";
+                    echo "</tr>";
                 }
-            }
             ?>
         </tbody>
     </table>
@@ -64,15 +46,18 @@ if (isset($_POST['reset'])) {
             <tr>
                 <th>Name</th>
                 <th>ID</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody id="present-students-table">
             <?php
-            if (isset($_SESSION['present_students'])) {
-                foreach ($_SESSION['present_students'] as $student) {
-                    echo "<tr><td>" . $student['name'] . "</td><td>" . $student['id'] . "</td></tr>";
+                while($row = mysqli_fetch_assoc($present_result)) {
+                    echo "<tr>";
+                    echo "<td>".$row['name']."</td>";
+                    echo "<td>".$row['id']."</td>";
+                    echo "<td>".$row['date']."</td>";
+                    echo "</tr>";
                 }
-            }
             ?>
         </tbody>
     </table>
