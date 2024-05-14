@@ -91,3 +91,10 @@ input:focus {
     border-color: #333;
 }
 
+#home {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+}
