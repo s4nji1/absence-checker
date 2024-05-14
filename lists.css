@@ -28,19 +28,32 @@ h1, h2 {
     padding: 10px;
     background-color: #807a7a;
     border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .containerr {
-    width: 800px;
+    width: 1000px;
+    height: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #333;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 table {
-    width: 800px;
+    width: 450px;
     border-collapse: collapse;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -56,10 +69,14 @@ table {
     border-spacing: 0;
 }
 
+.table2 {
+    margin-left: 50px;
+}
+
 th, td {
     padding: 5px;
     text-align: center;
-    color : black
+    color : black;
 }
 
 th {
@@ -78,6 +95,8 @@ button {
     width: 200px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 130px;
+    margin-right: 130px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;

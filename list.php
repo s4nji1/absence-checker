@@ -13,45 +13,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List</title>
-    <link rel="stylesheet" href="list.css">
+    <title>Liste des etudiants</title>
+    <link rel="stylesheet" href="lists.css">
 </head>
 <body>
-    <h1>Student List</h1>
+    <h1>Liste des etudiants</h1>
 
     <div class="containerr">
-    <h2>Absent Students</h2>
+        <div class="tables">
+            <div class="table1">
+    <h2>Les etudiants absents</h2>
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>ID</th>
+                <th>Nom</th>
+                <th>Identifiant</th>
+                <th>Date de l'abscence</th>
             </tr>
         </thead>
         <tbody id="absent-students-table">
             <?php
                 while($row = mysqli_fetch_assoc($absent_result)) {
-                    echo "<tr>";
-                    echo "<td>".$row['name']."</td>";
-                    echo "<td>".$row['id']."</td>";
-                    echo "</tr>";
-                }
-            ?>
-        </tbody>
-    </table>
-
-    <h2>Present Students</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>ID</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody id="present-students-table">
-            <?php
-                while($row = mysqli_fetch_assoc($present_result)) {
                     echo "<tr>";
                     echo "<td>".$row['name']."</td>";
                     echo "<td>".$row['id']."</td>";
@@ -61,25 +43,36 @@
             ?>
         </tbody>
     </table>
+            </div>
 
-    <form method="post">
-        <button type="submit" onclick="resetTables()" name="reset">Reset lists</button>
-    </form>
+            <div class="table2">
+    <h2>Les etudiants presents</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Identifiant</th>
+                <th>temps de la saisie</th>
+            </tr>
+        </thead>
+        <tbody id="present-students-table">
+            <?php
+                while($row = mysqli_fetch_assoc($present_result)) {
+                    echo "<tr>";
+                    echo "<td>".$row['name']."</td>";
+                    echo "<td>".$row['id']."</td>";
+                    echo "<td>".$row['time']."</td>";
+                    echo "</tr>";
+                }
+            ?>
+        </tbody>
+    </table>
+            </div>
+    </div>
+        <div class="btn">
+        <a href="absent.php"><button>Ajouter l'absence</button></a>
+        <a href="present.php"><button>Ajouter la presence</button></a>
+        </div>
     </div>  
-
-    <script>
-
-        function resetTables() {
-            var absentTable = document.getElementById("absent-students-table");
-            while (absentTable.firstChild) {
-            absentTable.removeChild(absentTable.firstChild);
-        }
-            var presentTable = document.getElementById("present-students-table");
-            while (presentTable.firstChild) {
-            presentTable.removeChild(presentTable.firstChild);
-        }
-    }
-
-    </script>
 </body>
 </html>

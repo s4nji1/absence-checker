@@ -1,5 +1,5 @@
 <?php
-      $correctNumber = 45; // Default value
+      $correctNumber = 35; // Default value
       include "update_correct_number.php";
 ?>
 
@@ -8,16 +8,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Attendance Check</title>
+    <title>Contrôle de présence</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="container">
-      <h1>Attendance Check</h1>
+      <h1>Contrôle de présence</h1>
       <div id="numbers"></div>
-      <label for="numberInput">Enter the Correct Number :</label>
+      <label for="numberInput">Entrez le nombre correct :</label>
       <input type="number" id="numberInput" />
-      <button type="submit" onclick="checkAttendance()">Check Attendance</button>
+      <button type="submit" onclick="checkAttendance()">Vérifier la présence</button>
       <p id="result"></p>
     </div>
 
@@ -45,7 +45,7 @@
 
         function displayNumbers(numbers) {
           const numbersContainer = document.getElementById("numbers");
-          numbersContainer.innerHTML = "Pick a number : ";
+          numbersContainer.innerHTML = "Choisissez un numéro : ";
           numbers.forEach((number) => {
             numbersContainer.innerHTML += number + " ";
           });
@@ -62,7 +62,7 @@
           const numbersContainer = document.getElementById("numbers");
           numbersContainer.innerText =
             "Generated Numbers: " + generateNumbers().join(", ");
-          numbersContainer.innerHTML += "<br>Correct Number: " + correctNumber;
+          numbersContainer.innerHTML += "<br>Nombre correct: " + correctNumber;
         }
 
       function checkAttendance() {
@@ -72,7 +72,6 @@
         if (enteredNumber == correctNumber) {
           window.location.href = "present.php";
         } else {
-          document.getElementById("result").innerText =
           window.location.href = "absent.php";
         }
       }

@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Interface</title>
+    <title>nterface du professeur</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Enter Correct Number</h1>
+        <h1>Entrer le nombre correct :</h1>
         <form action="update_correct_number.php" method="post">
-            <label for="correctNumber">Correct Number:</label>
+            <label for="correctNumber">Le nombre correct :</label>
             <input type="number" id="correctNumber" name="correctNumber">
-            <button type="submit">Submit</button>
+            <button type="submit">Soumettre</button>
         </form>
-        <a href="list.php"><button>show list</button></a>
+        <a href="list.php"><button>afficher la liste</button></a>
     </div>
-
-    <?php
-        if (isset($_GET['correctNumber'])) {
-            echo "<p>Correct Number: " . $_GET['correctNumber'] . "</p>";
-        }
-    ?>
     
 </body>
 </html>

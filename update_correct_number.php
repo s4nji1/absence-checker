@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     file_put_contents("attendance.php", $attendanceContent);
     
     // Redirect back to admin interface
-    header("Location: admin_interface.php?success=true");
+    header("Location: prof_interface.php?success=true");
     exit();
 }
 ?>

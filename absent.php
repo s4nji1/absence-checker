@@ -18,19 +18,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Marquage des absences</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container" >
-      <h1>Absence marking</h1>
+      <h1>Marquage des absences</h1>
       <div id="numbers"></div>
       <form action="absent.php" method="post">
-      <label for="namea">Enter your full name :</label>
+      <label for="namea">Entrer votre nom complet :</label>
       <input type="text" id="namea" name="namea" />
-      <label for="ida">Enter your ID :</label>
+      <label for="ida">entrer votre identifiant :</label>
       <input type="number" id="ida" name="ida" />
-      <button type="submit">Mark absent</button>
+      <button type="submit">marque absent</button>
       </form>
     </div>
 </body>
