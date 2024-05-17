@@ -29,7 +29,7 @@
       <form action="absent.php" method="post">
       <label for="namea">Entrer votre nom complet :</label>
       <input type="text" id="namea" name="namea" />
-      <label for="ida">entrer votre identifiant :</label>
+      <label for="ida">Entrer votre identifiant :</label>
       <input type="number" id="ida" name="ida" />
       <button type="submit">marque absent</button>
       </form>

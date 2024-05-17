@@ -1,5 +1,5 @@
 <?php
-      $correctNumber = 35; // Default value
+      $correctNumber = 16; // Default value
       include "update_correct_number.php";
 ?>
 
@@ -54,16 +54,10 @@
 
         let correctNumber = <?php echo $correctNumber; ?>;
 
-        if (correctNumber) {
-          const numbersContainer = document.getElementById("numbers");
-          numbersContainer.innerText =
-            "Generated Numbers: " + generateNumbers().join(", ");
-          numbersContainer.innerHTML += "<br>Nombre correct: " + correctNumber;
-        }
-
       function checkAttendance() {
         const enteredNumber = parseInt(
-          document.getElementById("numberInput").value);
+          document.getElementById("numberInput").value
+        );
         if (enteredNumber == correctNumber) {
           window.location.href = "present.php";
         } else {

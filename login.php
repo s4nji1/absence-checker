@@ -1,20 +1,37 @@
 <?php
-    include "Database.php";
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name = $_POST['name'];
-        $password = $_POST['pass'];
-        
-        if (!empty($name) && !empty($password)) {
-            if ($name == 'admin' && $password == 'admin') {
-                header('Location: prof_interface.php');
+include "Database.php";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $user = $_POST['name'];
+    $password = $_POST['pass'];
+
+    if (empty($user) || empty($password)) {
+        echo 'Veuillez entrer le nom d utilisateur et le mot de passe !';
+    } else {
+
+        $user = mysqli_real_escape_string($conn, $user);
+        $password = mysqli_real_escape_string($conn, $password);
+
+
+        $sql = "SELECT * FROM login_prof WHERE name='$user'";
+        $result = mysqli_query($conn, $sql);
+
+
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+
+            if ($row['password'] == $password && $row['name'] == $user) {
+                header("Location: prof_interface.php");
                 exit;
             } else {
-                echo 'Invalid credentials';
+                echo 'Mot de passe ou nom d utilisateur incorrects !';
             }
         } else {
-            echo 'Please enter both name and password.';
+            echo 'Utilisateur non trouvé !';
         }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +49,7 @@
         <form action="login.php" method="post">
             <label for="name">Entrer votre nom d'utilisateur :</label>
             <input type="text" id="name" name="name" />
-            <label for="ida">entrer votre mot de passe :</label>
+            <label for="ida">Entrer votre mot de passe :</label>
             <input type="password" id="pass" name="pass" />
             <button type="submit">Se connecter</button>
             </form>

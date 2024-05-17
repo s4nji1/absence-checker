@@ -7,7 +7,7 @@
 
         $sql = "INSERT INTO present (name, id) VALUES ('$name', '$id')";
         if (mysqli_query($conn, $sql)) {
-            echo "Record inserted successfully!";
+            echo "données d'étudiant sont inserées!";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
@@ -29,7 +29,7 @@
       <form action="present.php"  method="post">
       <label for="namep">Entrer votre nom complet :</label>
       <input type="text" id="namep" name="namep" />
-      <label for="idp">entrer votre identifiant :</label>
+      <label for="idp">Entrer votre identifiant :</label>
       <input type="number" id="idp" name="idp" />
       <button type="submit">marque present</button>
       </form>
