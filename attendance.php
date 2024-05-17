@@ -52,11 +52,6 @@
           });
         }
 
-        function getQueryParameter(name) {
-          const urlParams = new URLSearchParams(window.location.search);
-          return urlParams.get(name);
-        }
-
         let correctNumber = <?php echo $correctNumber; ?>;
 
         if (correctNumber) {
@@ -68,8 +63,7 @@
 
       function checkAttendance() {
         const enteredNumber = parseInt(
-          document.getElementById("numberInput").value
-        );
+          document.getElementById("numberInput").value);
         if (enteredNumber == correctNumber) {
           window.location.href = "present.php";
         } else {
